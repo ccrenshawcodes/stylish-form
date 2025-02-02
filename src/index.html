@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Info!</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <div class="hero max-w-md mx-auto">
+        <div class="hero-content text-center max-w-md flex-col">
+            <h1 class="text-5xl">Sign Up</h1>
+            <h2 class="text-3xl">We're glad you've found us.</h2>
+            <h3>Sign up here to receive updates!</h3>
+        </div>
+    </div>
+
+    <div class="inputs-card max-w-sm mx-auto">
+        <fieldset class="fieldset w-l">
+            <label for="firstname" class="fieldset-label">First Name</label>
+            <input type="text" class="input" placeholder="Bob">
+    
+            <label for="lastname" class="fieldset-label">Last Name</label>
+            <input type="text" class="input" placeholder="Ross">
+    
+            <label for="phone" class="fieldset-label">Phone number</label>
+            <input type="text" class="input">
+    
+            <label for="email" class="fieldset-label">Email</label>
+            <input type="email" class="input">
+    
+            <p>How did you hear about us?</p>
+            <button class="btn w-xs" popovertarget="source-select" style="anchor-name:--anchor-1">Select...</button>
+            <ul 
+                class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                popover id="source-select" 
+                style="position-anchor:--anchor-1"
+            >
+                <li><a>Facebook</a></li>
+                <li><a>Online ad</a></li>
+                <li><a>Traditional ad</a></li>
+                <li><a>A friend</a></li>
+                <li><a>Other</a></li>
+            </ul>
+
+            <div class="btn w-xs">Submit</div>
+        </fieldset>
+    </div>
+</body>
+</html>
