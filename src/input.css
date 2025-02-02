@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+input {
+    margin: auto;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+}

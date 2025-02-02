@@ -9,14 +9,14 @@
 <body>
     <div class="hero max-w-md mx-auto">
         <div class="hero-content text-center max-w-md flex-col">
-            <h1 class="text-5xl">Sign Up</h1>
+            <h1 class="text-5xl">Sign Up!</h1>
             <h2 class="text-3xl">We're glad you've found us.</h2>
             <h3>Sign up here to receive updates!</h3>
         </div>
     </div>
 
-    <div class="inputs-card max-w-sm mx-auto">
-        <fieldset class="fieldset w-l">
+    <div class="inputs-card ">
+        <fieldset class="fieldset w-l max-w-sm mx-auto">
             <label for="firstname" class="fieldset-label">First Name</label>
             <input type="text" class="input" placeholder="Bob">
     
@@ -29,8 +29,14 @@
             <label for="email" class="fieldset-label">Email</label>
             <input type="email" class="input">
     
-            <p>How did you hear about us?</p>
-            <button class="btn w-xs" popovertarget="source-select" style="anchor-name:--anchor-1">Select...</button>
+            <label class="fieldset-label mt-1">How did you hear about us?</label>
+            <button 
+                class="btn btn-info btn-outline w-xs" 
+                popovertarget="source-select" 
+                style="anchor-name:--anchor-1"
+            >
+                Select...
+            </button>
             <ul 
                 class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
                 popover id="source-select" 
@@ -43,7 +49,7 @@
                 <li><a>Other</a></li>
             </ul>
 
-            <div class="btn w-xs">Submit</div>
+            <button class="btn btn-success w-xs mt-10">Submit</button>
         </fieldset>
     </div>
 </body>
