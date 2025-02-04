@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="caramellatte">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +7,65 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
-    <div class="hero max-w-md mx-auto">
-        <div class="hero-content text-center max-w-md flex-col">
-            <h1 class="text-5xl">Sign Up!</h1>
-            <h2 class="text-3xl">We're glad you've found us.</h2>
-            <h3>Sign up here to receive updates!</h3>
+    <div class="hero mx-auto py-30"
+        style="background-image: url(./assets/campers.jpg)"
+    >
+        <div class="hero-content text-center flex-col text-white glass rounded-box p-10 mx-5">
+            <h1 class="text-5xl">Salmonberry Outdoor Adventures</h1>
+            <h2 class="text-3xl">We're glad you've found us!</h2>
         </div>
     </div>
 
-    <div class="inputs-card ">
-        <fieldset class="fieldset w-l max-w-sm mx-auto">
-            <label for="firstname" class="fieldset-label">First Name</label>
-            <input type="text" class="input" placeholder="Bob">
     
-            <label for="lastname" class="fieldset-label">Last Name</label>
-            <input type="text" class="input" placeholder="Ross">
+    <div class="inputs-card mt-5 mx-auto">
+        <h3>Sign up here to be added to our summer waitlist.</h3>
+        <fieldset class="fieldset w-l max-w-md mx-auto mt-10">
+            <label for="yourname" class="fieldset-label">Your Name</label>
+            <input type="text" class="input" required>
     
+            <label for="email" class="fieldset-label">Email*</label>
+            <input type="email" class="input" required>
+
             <label for="phone" class="fieldset-label">Phone number</label>
             <input type="text" class="input">
-    
-            <label for="email" class="fieldset-label">Email</label>
-            <input type="email" class="input">
+
+            <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
+            <button class="btn btn-outline btn-accent w-xs"
+                popovertarget="experience-select"
+                style="anchor-name:--anchor-2"
+            >
+                Select...
+            </button>
+            <ul
+            class="dropdown menu w-100 rounded-box bg-base-100 shadow-sm"
+            popover id="experience-select"
+            style="position-anchor:--anchor-2"
+            >
+                <li><a>Intro to Rock Climbing (kids)</a></li>
+                <li><a>Intro to Rock Climbing (teens)</a></li>
+                <li><a>Intro to Rock Climbing (adults)</a></li>
+                <li><a>Slow Hikers Backpacking Retreat</a></li>
+                <li><a>Slow Hikers Backpacking Retreat (women)</a></li>
+                <li><a>Family Zipline Adventure</a></li>
+                <li><a>Canyoneering Week (advanced)</a></li>                   <li><a>Dark Sky Camping</li>
+            </ul>
     
             <label class="fieldset-label mt-1">How did you hear about us?</label>
             <button 
-                class="btn btn-info btn-outline w-xs" 
+                class="btn btn-outline w-xs" 
                 popovertarget="source-select" 
                 style="anchor-name:--anchor-1"
             >
                 Select...
             </button>
             <ul 
-                class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                class="
+                    dropdown menu 
+                    w-100
+                    rounded-box 
+                    bg-base-100 
+                    shadow-sm
+                "
                 popover id="source-select" 
                 style="position-anchor:--anchor-1"
             >
