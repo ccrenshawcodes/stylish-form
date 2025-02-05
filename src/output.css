@@ -1081,6 +1081,140 @@
       }
     }
   }
+  .checkbox {
+    border: var(--border) solid var(--input-color, color-mix(in oklab, var(--color-base-content) 20%, #0000));
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    appearance: none;
+    border-radius: var(--radius-selector);
+    padding: calc(0.25rem * 1);
+    vertical-align: middle;
+    color: var(--color-base-content);
+    box-shadow: 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1)) inset, 0 0 #0000 inset, 0 0 #0000;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    --size: calc(var(--size-selector, 0.25rem) * 6);
+    width: var(--size);
+    height: var(--size);
+    background-size: auto, calc(var(--noise) * 100%);
+    background-image: none, var(--fx-noise);
+    &:before {
+      --tw-content: "";
+      content: var(--tw-content);
+      display: block;
+      width: 100%;
+      height: 100%;
+      rotate: 45deg;
+      background-color: currentColor;
+      opacity: 0%;
+      transition: clip-path 0.3s, opacity 0.1s, rotate 0.3s, translate 0.3s;
+      transition-delay: 0.1s;
+      clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 70% 80%, 70% 100%);
+      box-shadow: 0px 3px 0 0px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
+      font-size: 1rem;
+      line-height: 0.75;
+    }
+    &:focus-visible {
+      outline: 2px solid var(--input-color, currentColor);
+      outline-offset: 2px;
+    }
+    &:checked, &[aria-checked="true"] {
+      background-color: var(--input-color, #0000);
+      box-shadow: 0 0 #0000 inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
+      &:before {
+        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 0%, 70% 0%, 70% 100%);
+        opacity: 100%;
+        @media print {
+          rotate: 0deg;
+        }
+        @media print {
+          background-color: transparent;
+        }
+        @media print {
+          --tw-content: "✔︎";
+        }
+        @media print {
+          clip-path: none;
+        }
+        @media (forced-colors: active) {
+          rotate: 0deg;
+          background-color: transparent;
+          --tw-content: "✔︎";
+          clip-path: none;
+        }
+      }
+    }
+    &:indeterminate {
+      &:before {
+        rotate: 0deg;
+        opacity: 100%;
+        translate: 0 -35%;
+        clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 80%, 80% 80%, 80% 100%);
+      }
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 20%;
+    }
+  }
+  .swap {
+    position: relative;
+    display: inline-grid;
+    cursor: pointer;
+    place-content: center;
+    vertical-align: middle;
+    webkit-user-select: none;
+    user-select: none;
+    input {
+      appearance: none;
+      border: none;
+    }
+    > * {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      transition-property: transform, rotate, opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    .swap-on, .swap-indeterminate, input:indeterminate ~ .swap-on {
+      opacity: 0%;
+    }
+    input:is(:checked, :indeterminate) {
+      & ~ .swap-off {
+        opacity: 0%;
+      }
+    }
+    input:checked ~ .swap-on, input:indeterminate ~ .swap-indeterminate {
+      opacity: 100%;
+    }
+  }
+  .absolute {
+    position: absolute;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-1 {
+    top: calc(var(--spacing) * 1);
+  }
+  .top-auto {
+    top: auto;
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .right-1 {
+    right: calc(var(--spacing) * 1);
+  }
+  .right-auto {
+    right: auto;
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .input {
     cursor: text;
     border: var(--border) solid #0000;
@@ -1287,17 +1421,37 @@
   .flex {
     display: flex;
   }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
   .w-full {
     width: 100%;
   }
+  .w-min {
+    width: min-content;
+  }
   .w-xs {
     width: var(--container-xs);
   }
   .max-w-md {
     max-width: var(--container-md);
+  }
+  .swap-rotate {
+    .swap-on, .swap-indeterminate, input:indeterminate ~ .swap-on {
+      rotate: 45deg;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-on, &.swap-active .swap-on {
+      rotate: 0deg;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-off, &.swap-active .swap-off {
+      rotate: calc(45deg * -1);
+    }
   }
   .link {
     cursor: pointer;
@@ -1317,20 +1471,14 @@
   .flex-col {
     flex-direction: column;
   }
-  .flex-row {
-    flex-direction: row;
-  }
-  .justify-around {
-    justify-content: space-around;
-  }
-  .justify-between {
-    justify-content: space-between;
-  }
   .rounded-box {
     border-radius: var(--radius-box);
   }
   .rounded-box {
     border-radius: var(--radius-box);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .glass {
     border: none;
@@ -1355,6 +1503,21 @@
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
+  }
+  .bg-base-200 {
+    background-color: var(--color-base-200);
+  }
+  .fill-base-200 {
+    fill: var(--color-base-200);
+  }
+  .fill-black {
+    fill: var(--color-black);
+  }
+  .fill-current {
+    fill: currentColor;
+  }
+  .fill-white {
+    fill: var(--color-white);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -1381,6 +1544,9 @@
   }
   .text-accent-content {
     color: var(--color-accent-content);
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-white {
     color: var(--color-white);
@@ -1596,6 +1762,39 @@ button {
     --border: 2px;
     --depth: 1;
     --noise: 1;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=forest]:checked),[data-theme=forest] {
+    color-scheme: dark;
+    --color-base-100: oklch(20.84% 0.008 17.911);
+    --color-base-200: oklch(18.522% 0.007 17.911);
+    --color-base-300: oklch(16.203% 0.007 17.911);
+    --color-base-content: oklch(83.768% 0.001 17.911);
+    --color-primary: oklch(68.628% 0.185 148.958);
+    --color-primary-content: oklch(0% 0 0);
+    --color-secondary: oklch(69.776% 0.135 168.327);
+    --color-secondary-content: oklch(13.955% 0.027 168.327);
+    --color-accent: oklch(70.628% 0.119 185.713);
+    --color-accent-content: oklch(14.125% 0.023 185.713);
+    --color-neutral: oklch(30.698% 0.039 171.364);
+    --color-neutral-content: oklch(86.139% 0.007 171.364);
+    --color-info: oklch(72.06% 0.191 231.6);
+    --color-info-content: oklch(0% 0 0);
+    --color-success: oklch(64.8% 0.15 160);
+    --color-success-content: oklch(0% 0 0);
+    --color-warning: oklch(84.71% 0.199 83.87);
+    --color-warning-content: oklch(0% 0 0);
+    --color-error: oklch(71.76% 0.221 22.18);
+    --color-error-content: oklch(0% 0 0);
+    --radius-selector: 1rem;
+    --radius-field: 2rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
   }
 }
 @layer base {
