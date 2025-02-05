@@ -1,10 +1,9 @@
 # Styled Sign-Up Form
+A fancy-looking sign-up form for an imaginary business!
 
-## A fancy-looking sign-up form for an imaginary business!
-
-### Technologies used
+## Technologies used
 * TailwindCSS
 * DaisyUI component library
 
-### Credits and Acknowledgements
+## Credits and Acknowledgements
 I do not own any of the images used in this project.
