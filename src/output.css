@@ -1284,8 +1284,14 @@
       display: none;
     }
   }
+  .flex {
+    display: flex;
+  }
   .w-100 {
     width: calc(var(--spacing) * 100);
+  }
+  .w-full {
+    width: 100%;
   }
   .w-xs {
     width: var(--container-xs);
@@ -1311,6 +1317,15 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
   .rounded-box {
     border-radius: var(--radius-box);
   }
@@ -1335,14 +1350,23 @@
     0 0 0 2px oklch(0% 0 0 / 5%);
     text-shadow: 0 1px oklch(0% 0 0 / var(--glass-text-shadow-opacity, 5%));
   }
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
   .bg-base-100 {
     background-color: var(--color-base-100);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
+  }
+  .pb-10 {
+    padding-bottom: calc(var(--spacing) * 10);
   }
   .text-center {
     text-align: center;
@@ -1354,6 +1378,9 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-accent-content {
+    color: var(--color-accent-content);
   }
   .text-white {
     color: var(--color-white);
@@ -1379,11 +1406,20 @@
     --btn-color: var(--color-success);
     --btn-fg: var(--color-success-content);
   }
+  .sm\:footer-horizontal {
+    @media (width >= 40rem) {
+      grid-auto-flow: column;
+      &.footer-center {
+        grid-auto-flow: row dense;
+      }
+    }
+  }
 }
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-height: 100vh;
 }
 input {
   margin: auto;
@@ -1391,6 +1427,9 @@ input {
 }
 button {
   width: 100%;
+}
+.github-link {
+  height: 1.5em;
 }
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
