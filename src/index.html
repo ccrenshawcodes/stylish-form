@@ -63,7 +63,7 @@
             <input type="text" class="input">
 
             <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
-            <button class="btn btn-outline btn-accent w-xs"
+            <button class="btn btn-outline btn-accent w-xs experience-select"
                 popovertarget="experience-select"
                 style="anchor-name:--anchor-2"
             >
@@ -77,6 +77,7 @@
                 rounded-box 
                 bg-base-100 
                 shadow-sm
+                experience-item
                 "
             popover id="experience-select"
             style="position-anchor:--anchor-2"
@@ -105,7 +106,7 @@
     
             <label class="fieldset-label mt-1">How did you hear about us?</label>
             <button 
-                class="btn btn-outline btn-accent w-xs" 
+                class="btn btn-outline btn-accent w-xs source-select" 
                 popovertarget="source-select" 
                 style="anchor-name:--anchor-1"
             >
@@ -118,6 +119,7 @@
                     rounded-box 
                     bg-base-100 
                     shadow-sm
+                    source-item
                 "
                 popover id="source-select" 
                 style="position-anchor:--anchor-1"
@@ -142,7 +144,7 @@
         </aside>
     </footer>
 
-
+    <script src="app.js"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
 </body>
 </html>
