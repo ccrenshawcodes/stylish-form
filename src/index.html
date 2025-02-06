@@ -12,6 +12,7 @@
         <label class="swap swap-rotate">
             <input type="checkbox" class="theme-controller" value="forest">
 
+            <!-- sun icon -->
             <svg
             class="swap-off h-10 w-10 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +21,7 @@
                     d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
             </svg>
 
+            <!-- moon icon -->
             <svg
                 class="swap-on h-10 w-10 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,14 +34,23 @@
     <div class="hero mx-auto py-30"
         style="background-image: url(./assets/campers.jpg)"
     >
-        <div class="hero-content text-center flex-col text-white glass rounded-box p-10 mx-5">
+        <div class="
+            hero-content 
+            text-center 
+            flex-col 
+            text-white 
+            glass 
+            rounded-box 
+            p-10 
+            mx-5"
+        >
             <h1 class="text-5xl">Salmonberry Outdoor Adventures</h1>
             <h2 class="text-3xl">We're glad you've found us!</h2>
         </div>
     </div>
 
     
-    <div class="inputs-card mt-5 mx-auto pb-10">
+    <div class="main-page mt-5 mx-auto pb-10">
         <h3>Sign up here to be added to our summer waitlist.</h3>
         <fieldset class="fieldset w-l max-w-md mx-auto mt-10">
             <label for="yourname" class="fieldset-label">Your Name</label>
@@ -59,7 +70,14 @@
                 Select...
             </button>
             <ul
-            class="dropdown menu w-100 rounded-box bg-base-100 shadow-sm"
+            class="
+                dropdown 
+                menu 
+                w-100 
+                rounded-box 
+                bg-base-100 
+                shadow-sm
+                "
             popover id="experience-select"
             style="position-anchor:--anchor-2"
             >
@@ -69,12 +87,25 @@
                 <li><a>Slow Hikers Backpacking Retreat</a></li>
                 <li><a>Slow Hikers Backpacking Retreat (women)</a></li>
                 <li><a>Family Zipline Adventure</a></li>
-                <li><a>Canyoneering Week (advanced)</a></li>                   <li><a>Dark Sky Camping</li>
+                <li><a>Canyoneering Week (advanced)</a></li>                   
+                <li><a>Dark Sky Camping</li>
             </ul>
+
+            <label class="fieldset-label">What date are you interested in?</label>
+            <button popovertarget="cally-popover1" class="input input-border" id="cally1" style="anchor-name:--cally1">
+                Pick a date...
+            </button>
+            <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">
+                <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
+                    <svg aria-label="Previous" class="size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
+                    <svg aria-label="Next" class="size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
+                    <calendar-month></calendar-month>
+                </calendar-date>
+            </div>
     
             <label class="fieldset-label mt-1">How did you hear about us?</label>
             <button 
-                class="btn btn-outline w-xs" 
+                class="btn btn-outline btn-accent w-xs" 
                 popovertarget="source-select" 
                 style="anchor-name:--anchor-1"
             >
@@ -101,6 +132,7 @@
             <button class="btn btn-success w-xs mt-10">Submit</button>
         </fieldset>
     </div>
+
     <footer class="footer sm:footer-horizontal bg-accent p-2">
         <aside class="flex w-full">
             <p class="text-accent-content">See the code on GitHub</p>
@@ -109,5 +141,8 @@
             </a>
         </aside>
     </footer>
+
+
+    <script type="module" src="https://unpkg.com/cally"></script>
 </body>
 </html>
