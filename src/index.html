@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
-    <div class="theme-switcher w-min sticky top-0 bg-base-200 p-2 rounded-full">
+    <div class="theme-switcher w-min sticky top-0 bg-base-200 p-2 rounded-full z-1000">
         <label class="swap swap-rotate">
             <input type="checkbox" class="theme-controller" value="forest">
 
@@ -31,6 +31,8 @@
             </svg>
         </label>
     </div>
+
+    <div class="page-content">
     <div class="hero mx-auto py-30"
         style="background-image: url(./assets/campers.jpg)"
     >
@@ -42,7 +44,8 @@
             glass 
             rounded-box 
             p-10 
-            mx-5"
+            mx-5
+            "
         >
             <h1 class="text-5xl">Salmonberry Outdoor Adventures</h1>
             <h2 class="text-3xl">We're glad you've found us!</h2>
@@ -50,90 +53,101 @@
     </div>
 
     
-    <div class="main-page mt-5 mx-auto pb-10">
+    <div class="mt-5 mx-auto pb-10">
+        <div class="main-page">
         <h3>Sign up here to be added to our summer waitlist.</h3>
-        <fieldset class="fieldset w-l max-w-md mx-auto mt-10">
-            <label for="yourname" class="fieldset-label">Your Name</label>
-            <input type="text" class="input" required>
-    
-            <label for="email" class="fieldset-label">Email*</label>
-            <input type="email" class="input" required>
+            <fieldset class="fieldset w-l max-w-md mx-auto mt-10">
+                <label for="yourname" class="fieldset-label">Your Name</label>
+                <input type="text" class="input" required>
+        
+                <label for="email" class="fieldset-label">Email*</label>
+                <input type="email" class="input" required>
 
-            <label for="phone" class="fieldset-label">Phone number</label>
-            <input type="text" class="input">
+                <label for="phone" class="fieldset-label">Phone number</label>
+                <input type="text" class="input">
 
-            <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
-            <button class="btn btn-outline btn-accent w-xs experience-select"
-                popovertarget="experience-select"
-                style="anchor-name:--anchor-2"
-            >
-                Select...
-            </button>
-            <ul
-            class="
-                dropdown 
-                menu 
-                w-100 
-                rounded-box 
-                bg-base-100 
-                shadow-sm
-                experience-item
-                "
-            popover id="experience-select"
-            style="position-anchor:--anchor-2"
-            >
-                <li><a>Intro to Rock Climbing (kids)</a></li>
-                <li><a>Intro to Rock Climbing (teens)</a></li>
-                <li><a>Intro to Rock Climbing (adults)</a></li>
-                <li><a>Slow Hikers Backpacking Retreat</a></li>
-                <li><a>Slow Hikers Backpacking Retreat (women)</a></li>
-                <li><a>Family Zipline Adventure</a></li>
-                <li><a>Canyoneering Week (advanced)</a></li>                   
-                <li><a>Dark Sky Camping</li>
-            </ul>
-
-            <label class="fieldset-label">What date are you interested in?</label>
-            <button popovertarget="cally-popover1" class="input input-border" id="cally1" style="anchor-name:--cally1">
-                Pick a date...
-            </button>
-            <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">
-                <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
-                    <svg aria-label="Previous" class="size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
-                    <svg aria-label="Next" class="size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
-                    <calendar-month></calendar-month>
-                </calendar-date>
-            </div>
-    
-            <label class="fieldset-label mt-1">How did you hear about us?</label>
-            <button 
-                class="btn btn-outline btn-accent w-xs source-select" 
-                popovertarget="source-select" 
-                style="anchor-name:--anchor-1"
-            >
-                Select...
-            </button>
-            <ul 
+                <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
+                <button class="btn btn-outline btn-accent w-xs experience-select"
+                    popovertarget="experience-select"
+                    style="anchor-name:--anchor-2"
+                >
+                    Select...
+                </button>
+                <ul
                 class="
-                    dropdown menu 
-                    w-100
+                    dropdown 
+                    menu 
+                    w-100 
                     rounded-box 
                     bg-base-100 
                     shadow-sm
-                    source-item
-                "
-                popover id="source-select" 
-                style="position-anchor:--anchor-1"
-            >
-                <li><a>Facebook</a></li>
-                <li><a>Online ad</a></li>
-                <li><a>Traditional ad</a></li>
-                <li><a>A friend</a></li>
-                <li><a>Other</a></li>
-            </ul>
+                    experience-item
+                    "
+                popover id="experience-select"
+                style="position-anchor:--anchor-2"
+                >
+                    <li><a>Intro to Rock Climbing (kids)</a></li>
+                    <li><a>Intro to Rock Climbing (teens)</a></li>
+                    <li><a>Intro to Rock Climbing (adults)</a></li>
+                    <li><a>Slow Hikers Backpacking Retreat</a></li>
+                    <li><a>Slow Hikers Backpacking Retreat (women)</a></li>
+                    <li><a>Family Zipline Adventure</a></li>
+                    <li><a>Canyoneering Week (advanced)</a></li>                   
+                    <li><a>Dark Sky Camping</li>
+                </ul>
 
-            <button class="btn btn-success w-xs mt-10">Submit</button>
-        </fieldset>
+                <label class="fieldset-label">What date are you interested in?</label>
+                <button popovertarget="cally-popover1" class="input input-border" id="cally1" style="anchor-name:--cally1">
+                    Pick a date...
+                </button>
+                <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">
+                    <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
+                        <svg aria-label="Previous" class="size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
+                        <svg aria-label="Next" class="size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
+                        <calendar-month></calendar-month>
+                    </calendar-date>
+                </div>
+        
+                <label class="fieldset-label mt-1">How did you hear about us?</label>
+                <button 
+                    class="btn btn-outline btn-accent w-xs source-select" 
+                    popovertarget="source-select" 
+                    style="anchor-name:--anchor-1"
+                >
+                    Select...
+                </button>
+                <ul 
+                    class="
+                        dropdown menu 
+                        w-100
+                        rounded-box 
+                        bg-base-100 
+                        shadow-sm
+                        source-item
+                    "
+                    popover id="source-select" 
+                    style="position-anchor:--anchor-1"
+                >
+                    <li><a>Facebook</a></li>
+                    <li><a>Online ad</a></li>
+                    <li><a>Traditional ad</a></li>
+                    <li><a>A friend</a></li>
+                    <li><a>Other</a></li>
+                </ul>
+
+                <button class="btn btn-success w-xs mt-10 submit-btn">Submit</button>
+            </fieldset>
+        </div>
+
+        <div class="post-submit hidden flex flex-row justify-center">
+            <h3 class="text-3xl">Thank you!</h3>
+            <p>We will be in touch shortly with further details.</p>
+            <h4 class="text-2xl">Adventure Awaits!</h4>
+            <button class="resubmit btn btn-success w-xs mt-10">Submit again</button>
+        </div>
     </div>
+
+
 
     <footer class="footer sm:footer-horizontal bg-accent p-2">
         <aside class="flex w-full">
@@ -143,7 +157,7 @@
             </a>
         </aside>
     </footer>
-
+</div>
     <script src="app.js"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
 </body>

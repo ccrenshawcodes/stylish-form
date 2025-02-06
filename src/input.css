@@ -3,11 +3,20 @@
     themes: light --default, dark --prefersdark, caramellatte, forest;
 }
 
-body {
+.page-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-height: 100vh;
+}
+
+.post-submit {
+    min-height: 60vh;
+}
+
+.post-submit > * {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 input {
