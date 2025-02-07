@@ -32,8 +32,8 @@
         </label>
     </div>
 
-    <div class="page-content">
-    <div class="hero mx-auto py-30"
+
+    <div class="hero mx-auto py-30 absolute top-0"
         style="background-image: url(./src/assets/campers.jpg)"
     >
         <div class="
@@ -47,16 +47,59 @@
             mx-5
             "
         >
-            <h1 class="text-5xl">Salmonberry Outdoor Adventures</h1>
-            <h2 class="text-3xl">We're glad you've found us!</h2>
+            <h1 class="text-6xl">Salmonberry Outdoor Adventures</h1>
         </div>
     </div>
 
+    <div class="page-content">
+        <h2 class="text-3xl size-fit self-center p-10">We're glad you're here!</h2>
+        <div class="carousel-holder mx-auto w-[80vw]">
+            <div class="carousel rounded-box">
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-9.jpg" alt="people in kayaks on a lake" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-1.jpg" alt="a man on a zipline above a forest" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-2.jpg" alt="people on a forest trail" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-6.jpg" alt="people in kayaks on a river" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-3.jpg" alt="woman at a campsite at a fire with a dog, tent and motorcycle in the background" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-4.jpg" alt="a man on a rock overlooking a tree-filled valley" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-7.jpg" alt="a man rock climbing" class="max-h-85">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="./src/assets/adventure-5.jpg" alt="people in kayaks on a river" class="max-h-85">
+                </div>
+            </div>
+        </div>
+
+        <p class="self-center size-fit w-[50vw] p-10 text-center italic">
+            Salmonberry Adventures has been making the great outdoors accessible since 1990.
+            There's something for everyone here with several programs to choose from and flexible start dates.
+            Join us this summer for an unforgettable experience!
+        </p>
     
-    <div class="mt-5 mx-auto pb-10">
-        <div class="main-page">
-        <h3>Sign up here to be added to our summer waitlist.</h3>
-            <fieldset class="fieldset w-l max-w-md mx-auto mt-10">
+    <div class="signup-content mt-5 mx-auto pb-10 pt-10 w-2xl">
+        <div class="main-page flex flex-col justify-center items-center">
+        <h3 class="size-fit text-2xl">Sign up here to be added to our summer waitlist!</h3>
+            <fieldset class="fieldset w-2/3 mx-auto mt-10">
                 <label for="yourname" class="fieldset-label">Your Name</label>
                 <input type="text" class="input" required>
         
@@ -67,7 +110,7 @@
                 <input type="text" class="input">
 
                 <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
-                <button class="btn btn-outline btn-accent w-xs experience-select"
+                <button class="btn btn-outline btn-accent experience-select w-full"
                     popovertarget="experience-select"
                     style="anchor-name:--anchor-2"
                 >
@@ -97,7 +140,7 @@
                 </ul>
 
                 <label class="fieldset-label">What date are you interested in?</label>
-                <button popovertarget="cally-popover1" class="input input-border" id="cally1" style="anchor-name:--cally1">
+                <button popovertarget="cally-popover1" class="input input-border w-full" id="cally1" style="anchor-name:--cally1">
                     Pick a date...
                 </button>
                 <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">
@@ -110,7 +153,7 @@
         
                 <label class="fieldset-label mt-1">How did you hear about us?</label>
                 <button 
-                    class="btn btn-outline btn-accent w-xs source-select" 
+                    class="btn btn-outline btn-accent source-select w-full" 
                     popovertarget="source-select" 
                     style="anchor-name:--anchor-1"
                 >
@@ -135,15 +178,15 @@
                     <li><a>Other</a></li>
                 </ul>
 
-                <button class="btn btn-success w-xs mt-10 submit-btn">Submit</button>
+                <button class="btn btn-success mt-10 submit-btn w-full">Submit</button>
             </fieldset>
         </div>
 
-        <div class="post-submit hidden flex flex-row justify-center">
-            <h3 class="text-3xl">Thank you!</h3>
-            <p>We will be in touch shortly with further details.</p>
-            <h4 class="text-2xl">Adventure Awaits!</h4>
-            <button class="resubmit btn btn-success w-xs mt-10">Submit again</button>
+        <div class="post-submit hidden justify-center mb-30">
+            <h3 class="text-3xl size-fit">Thank you!</h3>
+            <p class="size-fit">We will be in touch shortly with further details.</p>
+            <h4 class="text-2xl size-fit">Adventure Awaits!</h4>
+            <button class="resubmit btn btn-success w-2/3 block">Submit again</button>
         </div>
     </div>
 

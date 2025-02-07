@@ -28,7 +28,7 @@ submitBtn.addEventListener('click', () => {
 
 resub.addEventListener('click', () => {
     successPage.style.cssText = 'display: none;';
-    mainPage.style.cssText = 'display: block;';
+    mainPage.style.cssText = 'display: flex;';
 })
 
 /* TODO:
