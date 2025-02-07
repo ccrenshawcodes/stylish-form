@@ -100,14 +100,16 @@
         <div class="main-page flex flex-col justify-center items-center mb-[5em]">
         <h3 class="size-fit text-2xl">Sign up here to be added to our summer waitlist!</h3>
             <fieldset class="fieldset w-2/3 mx-auto mt-10">
-                <label for="yourname" class="fieldset-label">Your Name</label>
-                <input type="text" class="input your-name" required placeholder="Steve Irwin">
+                <label for="yourname" class="fieldset-label">Name*</label>
+                <input type="text" class="input validator your-name" minlength="1" placeholder="Steve Irwin" required>
+                <div class="validator-hint hidden">Please include your name</div>
         
                 <label for="email" class="fieldset-label">Email*</label>
-                <input type="email" class="input your-email" required placeholder="steve@irwin.com">
+                <input type="email" class="input validator your-email" placeholder="steve@irwin.com">
+                <div class="validator-hint hidden">Please enter a valid email address</div>
 
                 <label for="phone" class="fieldset-label">Phone number</label>
-                <input type="text" class="input your-phone" placeholder="(123) 456-7890">
+                <input type="tel" class="input your-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
 
                 <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
                 <button class="btn btn-outline btn-accent experience-select w-full"
