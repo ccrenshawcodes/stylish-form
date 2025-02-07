@@ -32,7 +32,7 @@ resub.addEventListener('click', () => {
 })
 
 /* TODO:
--Figure out the best way to have multiple pages
+- carousel?
 - wire up Submit button functionality
     - mvp: sends you to a success page [DONE]
     - future vers: 
@@ -40,7 +40,6 @@ resub.addEventListener('click', () => {
         - sends you a personalized email!!!!
 - wire up Select... button functionality
     - selected data should be added to the form data
-- carousel?
 - submit button tooltip to explain what it actually does? 
 
 NIT
