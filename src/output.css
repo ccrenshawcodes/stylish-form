@@ -1194,6 +1194,24 @@
   .sticky {
     position: sticky;
   }
+  .tooltip-bottom {
+    > .tooltip-content, &[data-tip]:before {
+      transform: translateX(-50%) translateY(var(--tt-pos, -0.25rem));
+      inset: var(--tt-off) auto auto 50%;
+    }
+    &:after {
+      transform: translateX(-50%) translateY(var(--tt-pos, -0.25rem)) rotate(180deg);
+      inset: var(--tt-tail) auto auto 50%;
+    }
+  }
+  .dropdown-top {
+    --anchor-v: top;
+    .dropdown-content {
+      top: auto;
+      bottom: 100%;
+      transform-origin: bottom;
+    }
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -1337,6 +1355,9 @@
   }
   .mb-30 {
     margin-bottom: calc(var(--spacing) * 30);
+  }
+  .mb-\[5em\] {
+    margin-bottom: 5em;
   }
   .mb-\[10em\] {
     margin-bottom: 10em;
@@ -1646,6 +1667,18 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .tooltip-primary {
+    --tt-bg: var(--color-primary);
+    > .tooltip-content, &[data-tip]:before {
+      color: var(--color-primary-content);
+    }
+  }
+  .tooltip-warning {
+    --tt-bg: var(--color-warning);
+    > .tooltip-content, &[data-tip]:before {
+      color: var(--color-warning-content);
+    }
   }
   .italic {
     font-style: italic;

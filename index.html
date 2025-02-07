@@ -97,7 +97,7 @@
         </p>
     
     <div class="signup-content mt-5 mx-auto pb-10 pt-10 w-2xl">
-        <div class="main-page flex flex-col justify-center items-center mb-[10em]">
+        <div class="main-page flex flex-col justify-center items-center mb-[5em]">
         <h3 class="size-fit text-2xl">Sign up here to be added to our summer waitlist!</h3>
             <fieldset class="fieldset w-2/3 mx-auto mt-10">
                 <label for="yourname" class="fieldset-label">Your Name</label>
@@ -143,7 +143,7 @@
                 <button popovertarget="cally-popover1" class="cally-button input input-border w-full" id="cally1" style="anchor-name:--cally1">
                     Pick a date...
                 </button>
-                <div popover id="cally-popover1" class="cally-popover dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">
+                <div popover id="cally-popover1" class="cally-popover dropdown bg-base-100 rounded-box shadow-lg dropdown-top" style="position-anchor:--cally1">
                     <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
                         <svg aria-label="Previous" class="size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
                         <svg aria-label="Next" class="size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
@@ -162,6 +162,7 @@
                 <ul 
                     class="
                         dropdown menu 
+                        dropdown-top
                         w-100
                         rounded-box 
                         bg-base-100 
@@ -178,7 +179,9 @@
                     <li><a>Other</a></li>
                 </ul>
 
-                <button class="btn btn-success mt-10 submit-btn w-full">Submit</button>
+                <div class="tooltip tooltip-bottom tooltip-warning" data-tip="Don't worry! Not actually collecting your data">
+                    <button class="btn btn-success mt-10 submit-btn w-full">Submit</button>
+                </div>
             </fieldset>
         </div>
 
