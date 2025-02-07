@@ -32,7 +32,6 @@ resub.addEventListener('click', () => {
 })
 
 /* TODO:
-- carousel?
 - wire up Submit button functionality
     - mvp: sends you to a success page [DONE]
     - future vers: 
@@ -46,7 +45,6 @@ NIT
 - hide popover when an option is selected
 - popover elements are hidden behind the bottom of the page :(
 - clear inputs on "submit" click
-- header image positioning on large screens
 
 BUGS
 
