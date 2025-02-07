@@ -13,8 +13,10 @@ const successPage = document.querySelector('.post-submit');
 const nameInput = document.querySelector('.your-name');
 const emailInput = document.querySelector('.your-email');
 const phoneInput = document.querySelector('.your-phone');
-const calendar = document.querySelector('.cally-button');
 
+const calendar = document.querySelector('.cally-button');
+const callyPopover = document.querySelector('.cally-popover');
+const callyMonth = document.querySelector('.cally-month');
 
 function resetFields () {
     nameInput.value = '';
@@ -32,10 +34,18 @@ function selectItem (display, val) {
 
 expreienceItem.addEventListener('click', (e) => {
     selectItem(experienceSelect, e.target.firstChild.data);
+    expreienceItem.hidePopover();
+
 })
 
 sourceItem.addEventListener('click', (e) => {
     selectItem(sourceSelect, e.target.firstChild.data);
+    sourceItem.hidePopover();
+})
+
+//  hide calendar when date is selected
+callyMonth.addEventListener('click', () => {
+    callyPopover.hidePopover();
 })
 
 //  show/hide main content vs success message
@@ -63,6 +73,7 @@ resub.addEventListener('click', () => {
     - selected data should be added to the form data
 - submit button tooltip to explain what it actually does?
 - add form validation 
+- make responsive for mobile
 
 NIT
 - hide popover when an option is selected
