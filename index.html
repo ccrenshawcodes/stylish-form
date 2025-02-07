@@ -101,13 +101,13 @@
         <h3 class="size-fit text-2xl">Sign up here to be added to our summer waitlist!</h3>
             <fieldset class="fieldset w-2/3 mx-auto mt-10">
                 <label for="yourname" class="fieldset-label">Your Name</label>
-                <input type="text" class="input" required>
+                <input type="text" class="input your-name" required>
         
                 <label for="email" class="fieldset-label">Email*</label>
-                <input type="email" class="input" required>
+                <input type="email" class="input your-email" required>
 
                 <label for="phone" class="fieldset-label">Phone number</label>
-                <input type="text" class="input">
+                <input type="text" class="input your-phone">
 
                 <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
                 <button class="btn btn-outline btn-accent experience-select w-full"
@@ -140,7 +140,7 @@
                 </ul>
 
                 <label class="fieldset-label">What date are you interested in?</label>
-                <button popovertarget="cally-popover1" class="input input-border w-full" id="cally1" style="anchor-name:--cally1">
+                <button popovertarget="cally-popover1" class="cally-button input input-border w-full" id="cally1" style="anchor-name:--cally1">
                     Pick a date...
                 </button>
                 <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg" style="position-anchor:--cally1">

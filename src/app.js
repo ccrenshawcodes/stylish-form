@@ -5,10 +5,27 @@ const sourceSelect = document.querySelector('.source-select');
 const sourceItem = document.querySelector('.source-item');
 
 const submitBtn = document.querySelector('.submit-btn');
-const mainPage = document.querySelector('.main-page');
-const successPage = document.querySelector('.post-submit');
 const resub = document.querySelector('.resubmit');
 
+const mainPage = document.querySelector('.main-page');
+const successPage = document.querySelector('.post-submit');
+
+const nameInput = document.querySelector('.your-name');
+const emailInput = document.querySelector('.your-email');
+const phoneInput = document.querySelector('.your-phone');
+const calendar = document.querySelector('.cally-button');
+
+
+function resetFields () {
+    nameInput.value = '';
+    emailInput.value = '';
+    phoneInput.value = '';
+    experienceSelect.textContent = 'Select...';
+    calendar.textContent = "Pick a date...";
+    sourceSelect.textContent = 'Select...';
+}
+
+//  replace button text with selected value
 function selectItem (display, val) {
     display.textContent = val;
 }
@@ -21,7 +38,9 @@ sourceItem.addEventListener('click', (e) => {
     selectItem(sourceSelect, e.target.firstChild.data);
 })
 
+//  show/hide main content vs success message
 submitBtn.addEventListener('click', () => {
+    resetFields();
     successPage.style.cssText = 'display: block;';
     mainPage.style.cssText = 'display: none;';
 })
@@ -31,6 +50,9 @@ resub.addEventListener('click', () => {
     mainPage.style.cssText = 'display: flex;';
 })
 
+
+
+
 /* TODO:
 - wire up Submit button functionality
     - mvp: sends you to a success page [DONE]
@@ -39,12 +61,12 @@ resub.addEventListener('click', () => {
         - sends you a personalized email!!!!
 - wire up Select... button functionality
     - selected data should be added to the form data
-- submit button tooltip to explain what it actually does? 
+- submit button tooltip to explain what it actually does?
+- add form validation 
 
 NIT
 - hide popover when an option is selected
 - popover elements are hidden behind the bottom of the page :(
-- clear inputs on "submit" click
 
 BUGS
 
