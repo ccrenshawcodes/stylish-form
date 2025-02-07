@@ -109,7 +109,8 @@
                 <div class="validator-hint hidden">Please enter a valid email address</div>
 
                 <label for="phone" class="fieldset-label">Phone number</label>
-                <input type="tel" class="input your-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                <input type="tel" class="input validator tabular-nums your-phone" placeholder="123-456-7890" minlength="10">
+                <div class="validator-hint hidden">Must be 10 digits</div>
 
                 <label class="fieldset-label mt-1">Which experience are you interested in?*</label>
                 <button class="btn btn-outline btn-accent experience-select w-full"
