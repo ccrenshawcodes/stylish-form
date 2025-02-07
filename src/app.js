@@ -76,8 +76,6 @@ resub.addEventListener('click', () => {
 - make responsive for mobile
 
 NIT
-- hide popover when an option is selected
-- popover elements are hidden behind the bottom of the page :(
 
 BUGS
 

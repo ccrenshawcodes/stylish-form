@@ -1338,6 +1338,12 @@
   .mb-30 {
     margin-bottom: calc(var(--spacing) * 30);
   }
+  .mb-\[10em\] {
+    margin-bottom: 10em;
+  }
+  .mb-\[20em\] {
+    margin-bottom: 20em;
+  }
   .carousel-item {
     box-sizing: content-box;
     display: flex;
