@@ -61,8 +61,6 @@ resub.addEventListener('click', () => {
 })
 
 
-
-
 /* TODO:
 - wire up Submit button functionality
     - mvp: sends you to a success page [DONE]
@@ -71,7 +69,6 @@ resub.addEventListener('click', () => {
         - sends you a personalized email!!!!
 - wire up Select... button functionality
     - selected data should be added to the form data
-- submit button tooltip to explain what it actually does?
 - add form validation 
 - make responsive for mobile
 
